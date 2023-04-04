@@ -352,14 +352,14 @@
       
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Jamaica Passport project
+          HSE openEHR PoC project
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Jamaica Passport project
+          HSE openEHR PoC project
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -369,8 +369,8 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS1-passport-project-overview/" class="md-nav__link">
-        Overview of the Passport-JDP project
+      <a href="hse/HSE1-hse-project-overview/" class="md-nav__link">
+        Overview of the HSE openEHR PoC project
       </a>
     </li>
   
@@ -383,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS2-retrieving-an-ehrid/" class="md-nav__link">
+      <a href="hse/HSE2-retrieving-an-ehr/" class="md-nav__link">
         Retrieving the patient's ehrId
       </a>
     </li>
@@ -397,8 +397,8 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS3-querying-allergies/" class="md-nav__link">
-        Querying for patient allergies
+      <a href="hse/HSE3-creating-an-ehr/" class="md-nav__link">
+        Creating a new patient 'EHR'
       </a>
     </li>
   
@@ -411,8 +411,8 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS7-querying-compositions/" class="md-nav__link">
-        Querying for recent compositions
+      <a href="hse/HSE4-discharge-summary-integration/" class="md-nav__link">
+        Discharge Summary integration
       </a>
     </li>
   
@@ -425,8 +425,8 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS9-committing-observation-data/" class="md-nav__link">
-        Committing Observation data
+      <a href="hse/HSE5-committing-composition-data/" class="md-nav__link">
+        Committing Composition data
       </a>
     </li>
   
@@ -439,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS10-retrieving-observation-data/" class="md-nav__link">
+      <a href="hse/HSE6-retrieving-composition-data/" class="md-nav__link">
         Retrieving a Patient Observations Composition
       </a>
     </li>
@@ -453,8 +453,8 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS11-updating-observation-data/" class="md-nav__link">
-        Updating Patient Observations data
+      <a href="hse/HSE7-querying-diagnoses/" class="md-nav__link">
+        Querying for diagnoses
       </a>
     </li>
   
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS12-composition-constraints/" class="md-nav__link">
+      <a href="hse/HSE8-composition-constraints/" class="md-nav__link">
         Understanding composition Constraints and validation
       </a>
     </li>
@@ -481,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS13-openehr-datatypes/" class="md-nav__link">
+      <a href="hse/HSE9-openehr-datatypes/" class="md-nav__link">
         openEHR Datatypes
       </a>
     </li>
@@ -495,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="passport/JPASS14-openehr-rm-attributes/" class="md-nav__link">
+      <a href="hse/HSE10-openehr-rm-attributes/" class="md-nav__link">
         Key openEHR RM attributes
       </a>
     </li>
@@ -789,15 +789,14 @@
 <p><a href=""><img alt="Run in Postman" src="https://run.pstmn.io/button.svg" /></a></p>
 <h3 id="which-api-to-use">Which API to use?</h3>
 <p>For more information on the various APIs  see <a href="intro/INT2-overview-rest-apis/">Overview of the different CDR APIs</a>.</p>
-<p>To get started we suggest you focus on the Better Ehrscape API. Although this is proprietary to Better and will soon be supplanted by the openEHR REST API, it uses some simplified data formats that can make life much easier. These formats are being adopted by the wider CDR community as part of the openEHR CDR API, so this advice will change, once this is better established.</p>
-<p>In other respects the Better API is conceptually very similar and you will not find it hard to adjust to the openEHR REST API, indeed one possibility is to use the standard API for most calls.</p>
+<p>Our current position is to suggest using the openEHR REST API for most of the calls, but using the Ehrscape endpoint (supported by both Better CDR and Vitasystems EhrBase) for the /composition calls. Thisi because currently the FLAT JSON format that we prefer is not currently supported by either CDR as part of the openEHR Rest API call, though it is nw part of the standard.</p>
 <h3 id="key-content">Key content</h3>
 <p><a href="postman/PM1-postman-getting-ready/">Getting started with Postman and the openEHR REST collection</a></p>
 <p><a href="intro/INT1-overview-openehr/">Introduction to openEHR</a></p>
 <p><a href="intro/INT2-overview-rest-apis/">Overview of the different CDR APIs</a></p>
-<p><a href="ehrscape/ECDR1-authentication/">Working with the Better Ehrscape API</a></p>
 <p><a href="opencdr/OCDR1-authentication/">Working with the openEHR REST API</a></p>
-<p><a href="passport/JPASS1-passport-project-overview/">Overview of the Jamaica MoHW Passport project</a></p>
+<p><a href="ehrscape/ECDR1-authentication/">Working with the Ehrscape API</a></p>
+<p><a href="hse/HSE1-hse-project-overview/">Overview of the HSE project</a></p>
 
 
 

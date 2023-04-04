@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../INT1-overview-openehr/">
+        <link rel="prev" href="../HSE6-retrieving-composition-data/">
       
       
-        <link rel="next" href="../INT3-archetypes-template/">
+        <link rel="next" href="../HSE8-composition-constraints/">
       
       <link rel="icon" href="../../images/hse.jpg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
     
     
       
-        <title>Overview of openEHR REST APIs - openEHR CDR API for HL7v2 to openEHR integration (HSE)</title>
+        <title>Querying for diagnoses - openEHR CDR API for HL7v2 to openEHR integration (HSE)</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#querying-for-diagnoses" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview of openEHR REST APIs
+              Querying for diagnoses
             
           </span>
         </div>
@@ -199,16 +199,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
       
@@ -217,7 +215,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Introduction to openEHR
@@ -230,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../INT1-overview-openehr/" class="md-nav__link">
+      <a href="../../intro/INT1-overview-openehr/" class="md-nav__link">
         Overview of openEHR
       </a>
     </li>
@@ -242,21 +240,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../intro/INT2-overview-rest-apis/" class="md-nav__link">
         Overview of openEHR REST APIs
       </a>
-      
     </li>
   
 
@@ -268,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../INT3-archetypes-template/" class="md-nav__link">
+      <a href="../../intro/INT3-archetypes-template/" class="md-nav__link">
         openEHR archetypes and templates
       </a>
     </li>
@@ -282,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../INT4-reference-model/" class="md-nav__link">
+      <a href="../../intro/INT4-reference-model/" class="md-nav__link">
         openEHR Reference Model
       </a>
     </li>
@@ -344,14 +332,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -360,7 +350,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           HSE openEHR PoC project
@@ -373,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE1-hse-project-overview/" class="md-nav__link">
+      <a href="../HSE1-hse-project-overview/" class="md-nav__link">
         Overview of the HSE openEHR PoC project
       </a>
     </li>
@@ -387,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE2-retrieving-an-ehr/" class="md-nav__link">
+      <a href="../HSE2-retrieving-an-ehr/" class="md-nav__link">
         Retrieving the patient's ehrId
       </a>
     </li>
@@ -401,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE3-creating-an-ehr/" class="md-nav__link">
+      <a href="../HSE3-creating-an-ehr/" class="md-nav__link">
         Creating a new patient 'EHR'
       </a>
     </li>
@@ -415,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE4-discharge-summary-integration/" class="md-nav__link">
+      <a href="../HSE4-discharge-summary-integration/" class="md-nav__link">
         Discharge Summary integration
       </a>
     </li>
@@ -429,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE5-committing-composition-data/" class="md-nav__link">
+      <a href="../HSE5-committing-composition-data/" class="md-nav__link">
         Committing Composition data
       </a>
     </li>
@@ -443,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE6-retrieving-composition-data/" class="md-nav__link">
+      <a href="../HSE6-retrieving-composition-data/" class="md-nav__link">
         Retrieving a Patient Observations Composition
       </a>
     </li>
@@ -455,11 +445,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../hse/HSE7-querying-diagnoses/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Querying for diagnoses
       </a>
+      
     </li>
   
 
@@ -471,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE8-composition-constraints/" class="md-nav__link">
+      <a href="../HSE8-composition-constraints/" class="md-nav__link">
         Understanding composition Constraints and validation
       </a>
     </li>
@@ -485,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE9-openehr-datatypes/" class="md-nav__link">
+      <a href="../HSE9-openehr-datatypes/" class="md-nav__link">
         openEHR Datatypes
       </a>
     </li>
@@ -499,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hse/HSE10-openehr-rm-attributes/" class="md-nav__link">
+      <a href="../HSE10-openehr-rm-attributes/" class="md-nav__link">
         Key openEHR RM attributes
       </a>
     </li>
@@ -784,27 +784,144 @@
                   
 
 
-<h1 id="introduction">Introduction</h1>
-<p>Although the basic approach of interacting with openEHR CDRs via a simple service layer has been well established for some time, until recently, each CDR vendor had their own RESTful API, albeit these worked in a very similar fashion.</p>
-<p>In recent years the CDR implementer community has agreed a common standardised <a href="https://specifications.openehr.org/releases/ITS-REST/latest/index.html">openEHR REST API</a></p>
-<p>This has now been implemented by a number of CDR providers, though most continue to make use of their 'proprietary variants' alongside the standard API.</p>
-<p>This documentation and related technical artefacts will cover the standard openEHR REST API, as well as the equivalent calls to the <a href="https://dev.ehrscape.com/api-explorer.html">Better Ehrscape API</a>, which is widely used in the UK, and in particular is supported by the Ripple Ethercis CDR.</p>
-<p>One significant difference is that Better Ehrscape API allows openEHR records to be submitted via some simplified JSON formats which are very helpful to those new to openEHR. Work is underway to bring this kind of 'simplified JSON' into the openEHR standard space and we also anticipate some other vendors to emulate the Better Ehrscape JSON formats until the standardised simplified format is agreed.</p>
-<p>To be clear, these simplified formats are used for convenience only, and within the CDR the data is stored and can be retrieved and queried in a completely standard fashion via the openEHR REST API.</p>
-<h3 id="differences-between-better-ehrscape-and-openehr-rest-apis">Differences between Better Ehrscape and openEHR REST APIs</h3>
-<p>Conceptually these APIS are very similar with almost identical REST resources.</p>
-<p>For example the <code>List templates</code> call in Better Ehrscape is </p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://cdr.code4health.org/rest/v1/template&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Authorization: {{ authToken }}&#39;</span>
+<h1 id="querying-for-diagnoses">Querying for diagnoses</h1>
+<p>This section will take you through how to query for recent Compositions held on the CDR, using AQL (Archetype Query Language)</p>
+<p>The initial proposed dataset is
+- the name of Composition
+- the composition identifier 
+- the start date of the Composition
+- the name of the clinical author (composer)
+- the name of the healthcare facility
+- the name of the diagnosis
+- the date of onset of the problem
+- the date of diagnosis</p>
+<h3 id="querying-an-openehr-cdr-archetype-query-language-aql">Querying an openEHR CDR - Archetype Query language (AQL)</h3>
+<p>A CDR can be best thought of in terms of a exposing a complex object tree with the <code>EHR</code> object at the top, <code>Compositions</code> objects handling commits, but where <strong>all</strong> of the information in the tree can be traversed and accessed. Conceptually this is a logical query/graph language like SPARQL, the key difference being that the exact paths to the objects you might need to access are defined in the archetypes and templates you use to define and validate the data.</p>
+<p>AQL can be written by hand but is normally done using a tool like the Better Studio </p>
+<p>Understanding AQL is not generally important for third-party developers. Normally the correct AQL will be supplied by the CDR owner, indeed in production it is much more likely that server-side stored queries would be used.</p>
+<h3 id="post-query-run-an-ad-hoc-aql-query"><code>POST /query</code> | Run an ad-hoc AQL query</h3>
+<p>This example will retrieve the data requirement above. To run the query - a <code>querystring</code> needs to be carried in the <code>body</code> of the POST call as raw data with the Header <code>Content-Type</code> set to `application/json'</p>
+<p>This is the <code>queryString:</code> that we need to send.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="o">/</span><span class="n">uid</span><span class="o">/</span><span class="n">value</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">compositionId</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="k">c</span><span class="o">/</span><span class="n">name</span><span class="o">/</span><span class="n">value</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">compositionName</span><span class="p">,</span>
+<span class="w">    </span><span class="k">c</span><span class="o">/</span><span class="n">context</span><span class="o">/</span><span class="n">start_time</span><span class="o">/</span><span class="n">value</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">startTime</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="k">c</span><span class="o">/</span><span class="n">composer</span><span class="o">/</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">authorName</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="k">c</span><span class="o">/</span><span class="n">context</span><span class="o">/</span><span class="n">health_care_facility</span><span class="o">/</span><span class="n">name</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">facilityName</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">EHR</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="p">[</span><span class="n">ehr_id</span><span class="o">/</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{{ ehrId }}&#39;</span><span class="p">]</span>
+<span class="k">CONTAINS</span><span class="w"> </span><span class="n">COMPOSITION</span><span class="w"> </span><span class="k">c</span>
+
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">c</span><span class="o">/</span><span class="n">context</span><span class="o">/</span><span class="n">start_time</span><span class="o">/</span><span class="n">value</span><span class="w"> </span><span class="k">DESC</span>
 </code></pre></div>
-<p>while in the openEHR REST API it is </p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://cdr.code4health.org/rest/v1/definition/template/adl1.4&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Prefer: return=minimal&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Authorization: {{ authToken }}&#39;</span>
+<div class="admonition warning">
+<p class="admonition-title">Note the ehrId substitution</p>
+</div>
+<p>You will need to make sure that the <code>ehrId</code> variable in the queryString is substituted with the correct <code>ehrId</code> for the patient concerned.</p>
+<p>Don't worry about this seemingly odd format -it is essentially a mix of SQL and a path-based syntax, like SPARQL or XQuery.</p>
+<p>Running the query is easy- just call the <code>POST /query</code> call, sending the AQL string in the body of the request but <strong>note that you should strip the string of any linefeed and carriage returns</strong> etc. </p>
+<p>The Postman 'Ad-hoc query' request has a utility function under 'Pre-req' that sanitises the string and sets it into an environment variable before inserting it into the request body.</p>
+<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Postman</label><div class="tabbed-content">
+<p><img alt="" src="../../images/cdr-run-query-postman.png" /></p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">cURL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>curl --location --request POST &#39;https://rest.ehrscape.com/rest/v1/query&#39; \
+    --header &#39;Content-Type: application/json&#39; \
+    --header &#39;Authorization: Basic YTgxZjQ3YzYtYTc1Ny00ZTM0LWI2NDQtM2NjYzYyYjRhMDFjOiQyYSQxMCQ2MTlraQ== \
+    --data-raw &#39;{
+        &quot;aql&quot;: &quot;{{ queryString }}&quot;
+    }&#39;
 </code></pre></div>
-<p>The basic message is that if you become familiar with the Better Ehrscape API, jumping to, or intermixing with, the openEHR REST API will not be too difficult.</p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">NodeJs - Axios</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="s2">&quot;aql&quot;</span><span class="o">:</span><span class="s2">&quot;SELECT ... FROM ... CONTAINS ... WHERE&quot;</span><span class="p">});</span>
+
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://rest.ehrscape.com/rest/v1/query&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="s1">&#39;Authorization&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Basic YTgxZjQ3YzYtYTc1Ny00ZTM0LWI2NDQtM2NjYzYyYjRhMDFjOiQyYSQxMCQ2MTlraQ==&#39;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">data</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">data</span>
+<span class="w">     </span><span class="p">};</span>
+
+<span class="w">    </span><span class="nx">axios</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">});</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Python/requests</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://https://rest.ehrscape.com/rest/v1/query&quot;</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s2">&quot;{</span><span class="se">\n</span><span class="s2">    </span><span class="se">\&quot;</span><span class="s2">aql</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">{{ queryString }}</span><span class="se">\&quot;\n</span><span class="s2">}&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+<span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Basic YTgxZjQ3YzYtYTc1Ny00ZTM0LWI2NDQtM2NjYzYyYjRhMDFjOiQyYSQxMCQ2MTlraQ==&#39;</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</div>
+<h4 id="response">Response</h4>
+<p>The AQL response comes as back as an openEHR <code>resultSet</code>, which is a tabular shape, the exact format being determined by the AQL itself.</p>
+<p>In this example we have asked for scalar values only, but it is possible for AQL to return objects.</p>
+<p>The <code>columns</code> object shows the openEHR paths and aliases that are are returned in each row. </p>
+<p><code>json
+{
+    "meta": {
+        "_type": "RESULTSET",
+        "_created": "2020-10-18T15:46:37.208Z",
+        "_executed_aql": "SELECT c/uid/value as compositionId, c/name/value as compositionName,\nc/context/start_time/value as startTime, c/composer/name as authorName, c/context/health_care_facility/name as facilityName\nFROM EHR e \nCONTAINS COMPOSITION c\n \nORDER BY c/context/start_time/value DESC"
+    },
+    "q": "SELECT c/uid/value as compositionId, c/name/value as compositionName,\nc/context/start_time/value as startTime, c/composer/name as authorName, c/context/health_care_facility/name as facilityName\nFROM EHR e \nCONTAINS COMPOSITION c\n \nORDER BY c/context/start_time/value DESC",
+    "columns": [
+        {
+            "name": "compositionId",
+            "path": "/uid/value"
+        },
+        {
+            "name": "compositionName",
+            "path": "/name/value"
+        },
+        {
+            "name": "startTime",
+            "path": "/context/start_time/value"
+        },
+        {
+            "name": "authorName",
+            "path": "/composer/name"
+        },
+        {
+            "name": "facilityName",
+            "path": "/context/health_care_facility/name"
+        }
+    ],
+    "rows": [
+        [
+            "687d40df-57d1-4d29-ab41-88396f810de0::4cce5a07-be4d-4318-a94f-3b8401853a20::1",
+            "Passport observations",
+            "2020-10-13T14:31:17.878Z",
+            "moh-jamaica_4cce5a07-be4d-4318-a94f-3b8401853a20",
+            null
+        ],
+        [
+            "845db76d-cf06-4fca-9b62-22a7c231f31b::4cce5a07-be4d-4318-a94f-3b8401853a20::1",
+            "NCD - first visit",
+            "2020-07-22T15:17:03.696Z",
+            "Dr Murphy",
+            null
+        ]
+    ]
+}</code></p>
 
 
 
