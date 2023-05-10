@@ -778,11 +778,13 @@
 <p>Allows the recording of simple, unformatted text. Newlines and carriage returns are allowed.
 openEHR does not normally constrain the length of string.</p>
 <p>The example shows how a multiple occurrence Element is handled.</p>
-<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">RM Specs</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RM Specs</label><label for="__tabbed_1_2">CANONICAL JSON</label><label for="__tabbed_1_3">STRUCTURED JSON</label><label for="__tabbed_1_4">FLAT JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>The <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_text_package">rm.data_types.text package</a> contains classes for representing all textual values in the health record, including plain text, coded terms, and narrative text.
 <img alt="UML - openEHR RM-datatypes.text package" src="https://specifications.openehr.org/releases/UML/latest/diagrams/diagram_Diagrams___18_1_83e026d_1433773264006_931575_5971.svg" /></p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">CANONICAL JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="p">{</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">                        </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -826,7 +828,7 @@ openEHR does not normally constrain the length of string.</p>
 <span class="w">                    </span><span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">STRUCTURED JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">     </span><span class="nt">&quot;what_matters_to_me&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">          </span><span class="s2">&quot;Parents&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="s2">&quot;Mood&quot;</span><span class="p">,</span>
@@ -835,7 +837,7 @@ openEHR does not normally constrain the length of string.</p>
 <span class="w">        </span><span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">FLAT JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="err">```jso</span><span class="kc">n</span>
 <span class="w">      </span><span class="p">{</span>
 <span class="w">       </span><span class="nt">&quot;what_matters_to_me:0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Parents&quot;</span><span class="p">,</span>
@@ -843,6 +845,7 @@ openEHR does not normally constrain the length of string.</p>
 <span class="w">       </span><span class="nt">&quot;what_matters_to_me:2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Isolation&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <div class="admonition hint">
@@ -853,11 +856,16 @@ openEHR does not normally constrain the length of string.</p>
 <p>Is a commonly used datatype in openEHR systems and is a sub-class of <strong>text</strong>. i.e wherever <strong>text</strong> is specified <strong>codedText</strong> can be used instead.</p>
 <p>Codes may be 'external' e.g. SNOMED CT, LOINC, ICD-10 or 'local', where they are defined within archetypes, have the form <code>atxxxxx</code> and are commonly referred to as <strong>'atCodes'</strong>.</p>
 <p>A <strong>codedText</strong> element always includes the terminologyID, the code itself and the text of the coded concept (Rubric). In the patient data this is a carried in the <code>defining_code</code> attribute of the datatype.</p>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">RM Specs</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">RM Specs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <p>The <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_text_package">rm.data_types.text package</a> contains classes for representing all textual values in the health record, including plain text, coded terms, and narrative text.
     <img alt="UML - openEHR RM-datatypes.text package" src="https://specifications.openehr.org/releases/UML/latest/diagrams/diagram_Diagrams___18_1_83e026d_1433773264006_931575_5971.svg" /></p>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">CANONICAL JSON</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">CANONICAL JSON</label><label for="__tabbed_3_2">STRUCTURED JSON</label><label for="__tabbed_3_3">FLAT JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ELEMENT&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -880,7 +888,7 @@ openEHR does not normally constrain the length of string.</p>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">STRUCTURED JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&quot;legal_welfare_proxy_in_place&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">                                    </span><span class="p">{</span>
 <span class="w">                                        </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -894,50 +902,63 @@ openEHR does not normally constrain the length of string.</p>
 <span class="w">    </span><span class="p">]</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">FLAT JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">&quot;legal_welfare_proxy_in_place/status|value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Unknown&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;legal_welfare_proxy_in_place/status|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0007&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;legal_welfare_proxy_in_place/status|terminology&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span>
 </code></pre></div>
 </div>
 </div>
+</div>
 <h4 id="using-local-atcodes">Using local 'atCodes'</h4>
 <p>e.g <code>local::at0007| normal|</code></p>
 <p>When a <strong>codedText</strong> item is added to a FLAT or STRUCTURED JSON format document, you must give the code, value and terminology, unless this is a local 'atCode', in which case only the code needs to be provided, as the terminologyId and text value will be supplied as defaults, based on the known values in the template. </p>
 <p>Only the code needs to be specified - the value and terminology are not required since they are pre-defined in the openEHR template..</p>
-<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">FLAT JSON</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">FLAT JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="err">as</span><span class="kc">t</span><span class="err">hma_diary_e</span><span class="kc">ntr</span><span class="err">y/exami</span><span class="kc">nat</span><span class="err">io</span><span class="kc">n</span><span class="err">_</span><span class="kc">f</span><span class="err">i</span><span class="kc">n</span><span class="err">di</span><span class="kc">n</span><span class="err">gs</span><span class="p">:</span><span class="mi">0</span><span class="err">/pulmo</span><span class="kc">nar</span><span class="err">y_</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">_</span><span class="kc">test</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="p">:</span><span class="mi">0</span><span class="err">/resul</span><span class="kc">t</span><span class="err">_de</span><span class="kc">ta</span><span class="err">ils/pulmo</span><span class="kc">nar</span><span class="err">y_</span><span class="kc">fl</span><span class="err">ow_ra</span><span class="kc">te</span><span class="err">_resul</span><span class="kc">t</span><span class="err">/</span><span class="kc">test</span><span class="err">_resul</span><span class="kc">t</span><span class="err">_</span><span class="kc">na</span><span class="err">me|code&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;a</span><span class="kc">t</span><span class="mi">0071</span><span class="err">&#39;</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h4 id="using-external-terminology">Using external terminology</h4>
 <p>e.g. <code>SNOMED-CT::23924001| chest tightness |</code></p>
 <p>If an external terminology is used, the code, terminology and value must be specified</p>
-<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">FLAT JSON</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">FLAT JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>```json
    'asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|code': '23924001',
    'asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|value': 'chest tightness',
    'asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|terminology': 'SNOMED-CT',</p>
 </div>
 </div>
+</div>
 <p>```</p>
 <h4 id="handling-multiple-codes-mappings">Handling multiple codes - Mappings</h4>
 <p>Both DV_TEXT and DV_CODED_TEXT allow for other codes to be recorded in the patient record alongside the text value or defining code. THis is done via the <code>mappings</code> attribute in the DV_TEXT/DV_CODED_TEXT datatype.</p>
-<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">RM Specs</label><div class="tabbed-content"></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">RM Specs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
 </div>
 <p><a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_mappings">openEHR DV_TEXT mappings</a>
 <img alt="" src="https://specifications.openehr.org/releases/RM/latest/data_types/diagrams/coded_text_mappings.png" /></p>
-<div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">CANONICAL JSON</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">CANONICAL JSON</label><label for="__tabbed_7_2">STRUCTURED JSON</label><label for="__tabbed_7_3">FLAT JSON</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">STRUCTURED JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 </div>
-<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">FLAT JSON</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h2 id="datatype-ordinal-dv_ordinaland-scale-dv_scale">Datatype: <strong>ordinal</strong> <code>DV_ORDINAL</code>and <strong>scale</strong> <code>DV_SCALE</code></h2>

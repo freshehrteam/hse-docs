@@ -819,10 +819,12 @@
 <p>Don't worry about this seemingly odd format -it is essentially a mix of SQL and a path-based syntax, like SPARQL or XQuery.</p>
 <p>Running the query is easy- just call the <code>POST /query</code> call, sending the AQL string in the body of the request but <strong>note that you should strip the string of any linefeed and carriage returns</strong> etc. </p>
 <p>The Postman 'Ad-hoc query' request has a utility function under 'Pre-req' that sanitises the string and sets it into an environment variable before inserting it into the request body.</p>
-<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Postman</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Postman</label><label for="__tabbed_1_2">cURL</label><label for="__tabbed_1_3">NodeJs - Axios</label><label for="__tabbed_1_4">Python/requests</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><img alt="" src="../../images/cdr-run-query-postman.png" /></p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">cURL</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>curl --location --request POST &#39;https://rest.ehrscape.com/rest/v1/query&#39; \
     --header &#39;Content-Type: application/json&#39; \
     --header &#39;Authorization: Basic YTgxZjQ3YzYtYTc1Ny00ZTM0LWI2NDQtM2NjYzYyYjRhMDFjOiQyYSQxMCQ2MTlraQ== \
@@ -831,7 +833,7 @@
     }&#39;
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">NodeJs - Axios</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="s2">&quot;aql&quot;</span><span class="o">:</span><span class="s2">&quot;SELECT ... FROM ... CONTAINS ... WHERE&quot;</span><span class="p">});</span>
 
@@ -854,7 +856,7 @@
 <span class="w">    </span><span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Python/requests</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://https://rest.ehrscape.com/rest/v1/query&quot;</span>
@@ -869,6 +871,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h4 id="response">Response</h4>

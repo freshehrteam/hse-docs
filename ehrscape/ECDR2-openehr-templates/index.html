@@ -789,13 +789,15 @@
 <p>This section will test our connection the CDR by running a <code>List templates</code> call, then upload a new template to the CDR via an <code>Upload a template</code> call.</p>
 <h2 id="a-list-available-templates">A. List available templates</h2>
 <p>This call simply returns a list of the templates currently registered with the CDR, each with a unique <code>templateId</code>.</p>
-<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">cURL</label><label for="__tabbed_1_2">NodeJS/Axios</label><label for="__tabbed_1_3">Python/requests</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;{{ ehrscapeBaseUrl }}/template&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--header<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--header<span class="w"> </span><span class="s1">&#39;Authorization: {{ authToken }}&#39;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">NodeJS/Axios</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
 
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -816,7 +818,7 @@
 <span class="w">  </span><span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Python/requests</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;{{ ehrscapeBaseUrl }}/template&quot;</span>
@@ -831,6 +833,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h4 id="response">Response</h4>
@@ -858,7 +861,9 @@
 <p>You should be able to find an example 'operational' template in the <code>\technical\templates</code> folder. This is an XML file which contains the 'constraints' information required by the CDR to correctly validate anty information that is committed.</p>
 <p>The template example with <code>templateId : 'DHI - Urology_PROMs-v0'</code> represents a simple data-entry dataset to allow patients with Prostate cancer to record how they are feeling, and then share this with their care team.</p>
 <p>Don't worry for now about the format of the file itself. It follows the Archetype Object Model (1.4), but is always generated automatically by tools such as the openEHR Archetype Designer. </p>
-<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">cURL</label><label for="__tabbed_2_2">NodeJS/Axios</label><label for="__tabbed_2_3">Python/requests</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">    </span>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>POST<span class="w"> </span><span class="s1">&#39;{{ ehrscapeBaseUrl }}/template/&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--header<span class="w"> </span><span class="s1">&#39;Content-Type: application/xml&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--header<span class="w"> </span><span class="s1">&#39;Authorization: {{ authToken }}&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -869,7 +874,7 @@
 <span class="s1">    &#39;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">NodeJS/Axios</label><div class="tabbed-content">
+<div class="tabbed-block">
 <p>```js
   var axios = require('axios');
   var data = '&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;\n<template xmlns="http://schemas.openehr.org/v1">\n<!-- Snipped for brevity -->\n</template> TRIMMED for Brevity...... </template>\n';</p>
@@ -892,7 +897,7 @@
   });
 ``</p>
 </div>
-<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Python/requests</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;{{ ehrscapeBaseUrl }}/template/&quot;</span>
@@ -909,6 +914,7 @@
 </code></pre></div>
 </div>
 </div>
+</div>
 <h4 id="response_1">Response</h4>
 <p>Better CDR will give a <code>201</code> response code and return the <code>templateID</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -922,13 +928,15 @@
 <p>As well as being used to validate patient records when they are commited to the CDR, templates are used as the basis for many other types of technical artefact, such as automatic forms builders, class library generation, and for client-side validation in UI.</p>
 <p>Although formally aligned with the in-memory AOM, the operational template can be hard to parse and understand, particularly if you are just trying to understand the various schema constraints.</p>
 <p>For this purpose, you may find it helpful to generate a <strong>'Web template'</strong> - this is a much simpler JSON format, itself based on the operational template, and which can be exported from the openEHR Archetype Designer via the Export menu or retrieved via the Get Web Template (JSON) call.</p>
-<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">cURL</label><label for="__tabbed_3_2">NodeJS/Axios</label><label for="__tabbed_3_3">Python/requests</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><code>bash
   curl --location --request GET '{{ ehrscapeBaseUrl }}/template/{{ templateId }}' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: {{ authToken }}</code></p>
 </div>
-<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">NodeJS/Axios</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
 
 <span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -949,7 +957,7 @@
 <span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Python/requests</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
   <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;{{ ehrscapeBaseUrl }}/template/{{ templateId }}&quot;</span>
@@ -964,6 +972,7 @@
 
   <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <p>Now that we have a valid template uploaded, we can <a href="../ECDR3-committing-a-composition/">Commit a Composition</a> of patient data to the CDR.</p>

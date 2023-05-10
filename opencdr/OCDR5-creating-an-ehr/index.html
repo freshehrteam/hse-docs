@@ -795,17 +795,19 @@
 <h6 id="subjectnamespace"><code>subjectNamespace</code></h6>
 <p>This is just a unique string used to identify the numbering scheme used for the 'subjectId'. It will commonly be some sort of URI such as <code>uk.nhs.nhs_number</code> and will have been agreed at national level.</p>
 <p>Example value : <code>uk.nhs.nhs_number</code></p>
-<div class="tabbed-set" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Postman</label><div class="tabbed-content">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Postman</label><label for="__tabbed_1_2">cURL</label><label for="__tabbed_1_3">NodeJs - Axios</label><label for="__tabbed_1_4">Python/requests</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><img alt="" src="../../images/cdr-get-ehr_id-postman.png" /></p>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">cURL</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">    </span>curl<span class="w"> </span>--location<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://cdr.code4health.org/rest/v1/ehr/?subjectId=9999999000&amp;subjectNamespace=uk.nhs.nhs_number&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--header<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--header<span class="w"> </span><span class="s1">&#39;Authorization: Basic YTgxZjQ3YzYtYTc1Ny00ZTM0LWI2NDQtM2NjYzYyYjRhMDFjOiQyYSQxMCQ2MTlraQ==&#39;</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">NodeJs - Axios</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -826,7 +828,7 @@
 <span class="w">    </span><span class="p">});</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><label for="__tabbed_1_4">Python/requests</label><div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://cdr.code4health.org/rest/v1/ehr/?subjectId=9999999000&amp;subjectNamespace=uk.nhs.nhs_number&quot;</span>
@@ -841,6 +843,7 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
 </code></pre></div>
+</div>
 </div>
 </div>
 <h4 id="response">Response</h4>
