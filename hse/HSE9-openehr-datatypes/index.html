@@ -865,6 +865,7 @@ openEHR does not normally constrain the length of string.</p>
 <p class="admonition-title">Hint</p>
 <p><code>DV_TEXT</code> can always be sub-classed to <code>DV_CODED_TEXT</code>, so when you see a <strong>text</strong> constraint in an archetype , this can normally always be converted to a <strong>codedText</strong> in a template or at run-time.  As an example, the primary element in the <a href="">Adverse reaction risk</a> archetype is a <code>DV_TEXT</code> but in most circumstances a DV_CODED_TEXT will actually be used.</p>
 </div>
+<p>*** Integration issues</p>
 <h2 id="datatype-codedtext-dv_coded_text">Datatype: <strong>codedText</strong> (<code>DV_CODED_TEXT</code>)</h2>
 <p>Is a commonly used datatype in openEHR systems and is a sub-class of <strong>text</strong>. i.e wherever <strong>text</strong> is specified <strong>codedText</strong> can be used instead.</p>
 <p>Codes may be 'external' e.g. SNOMED CT, LOINC, ICD-10 or 'local', where they are defined within archetypes, have the form <code>atxxxxx</code> and are commonly referred to as <strong>'atCodes'</strong>.</p>
@@ -956,6 +957,78 @@ openEHR does not normally constrain the length of string.</p>
 </code></pre></div>
 </div>
 </div>
+<h4 id="integrationimport-handling-emptynull-data">Integration/import: Handling empty/null data</h4>
+<p>When integrating data from an external source, you may encounter an issue if the source data is absent.</p>
+<p>For example if the target json is
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/specimen:0/specimen_type|value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A value&quot;</span><span class="p">,</span>
+<span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/specimen:0/specimen_type|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_code&quot;</span><span class="p">,</span>
+<span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/specimen:0/specimen_type|terminology&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_terminology&quot;</span><span class="p">,</span>
+</code></pre></div></p>
+<p>and the incoming specimen_type datapoint is null or absent.</p>
+<p>In the Better CDR if you simple make each of the |value, |code and |terminology attributes and empty string, the whole row will be ignored by the CDR, which is correct, as the Specimen type element is optional.</p>
+<p>Unfortunately EhrBase is a little more complicated since it enforces an openEHR constraint which says that a CodedText object must have all 3 attributes populated, and ignores the fact that the overall element is itself optional.</p>
+<p>The upshot is that for an Ehrbase CDR, using FLAT format, we have to explicitly skip any rows where the incoming data is absent, whereas a BEtter CDR handles this more gracefully and will skip the row internally.</p>
+<h2 id="datatype-identifier">Datatype: <em>identifier</em></h2>
+<p><strong><em>identifier</em></strong> is an object designed to handle external identifiers like hospital numbers, national patient identifiers, professional identifiers etc.</p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">RM Specs</label><div class="tabbed-content"></div>
+</div>
+<p>The <a href="https://specifications.openehr.org/releases/RM/latest/data_types.html#_text_package">rm.data_types.identifier package</a> contains classes for representing all textual values in the health record, including plain text, coded terms, and narrative text.
+    <img alt="UML - openEHR RM-datatypes.identifier package" src="https://specifications.openehr.org/releases/UML/latest/diagrams/diagram_Diagrams___18_1_83e026d_1433773264006_931575_5971.svg" /></p>
+<p>The Identifier datatype object has the following attributes:</p>
+<div class="highlight"><pre><span></span><code>id: mandatory        // The identifier itself
+type: optional       // The type of identifier
+assigner: optional   // The assigning authority
+issuer: optional     // The issuing authority
+</code></pre></div>
+<div class="tabbed-set" data-tabs="9:3"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">CANONICAL JSON</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ELEMENT&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DV_TEXT&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Filler order number&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DV_IDENTIFIER&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JS008002B&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;filler_order_number&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;issuer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gov.ie&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;assigner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ie.gov.hse&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;archetype_node_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0063&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">STRUCTURED JSON</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="nt">&quot;filler_order_number&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;|type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;filler_order_number&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;|id&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;JS008002B&quot;</span>
+<span class="w">            </span><span class="nt">&quot;|issuer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Issuer&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;|assigner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assigner&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_3" name="__tabbed_9" type="radio" /><label for="__tabbed_9_3">FLAT JSON</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:1/test_request_details/filler_order_number|id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JS008002B&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:1/test_request_details/filler_order_number|type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;filler_order_number&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/test_request_details/filler_order_number|issuer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Issuer&quot;</span><span class="p">,</span>
+<span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/test_request_details/filler_order_number|assigner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assigner&quot;</span><span class="p">,</span>
+</code></pre></div>
+</div>
+</div>
+<h4 id="integrationimport-handling-emptynull-data_1">Integration/import: Handling empty/null data</h4>
+<p>When integrating data from an external source, you may encounter an issue if the source data is absent.</p>
+<p>For example if the target json is
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:1/test_request_details/filler_order_number|id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;an identifier&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:1/test_request_details/filler_order_number|type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;filler_order_number&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/test_request_details/filler_order_number|issuer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Issuer&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;generic_laboratory_report/laboratory_test_result:0/test_request_details/filler_order_number|assigner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Assigner&quot;</span><span class="p">,</span>
+</code></pre></div></p>
+<p>and the incoming <code>filler_order_number</code> datapoint is null or absent.</p>
+<p>In the Better CDR if you simply make each of the |id, |type and any other attributes an empty string, the whole row will be ignored by the CDR, which is correct, as the Filler order number type element is optional.</p>
+<p>Unfortunately EhrBase is a little more complicated since it enforces an openEHR constraint which says that the 'id' attribute within Identifier object is mandatory, and ignores the fact that the overall element is itself optional.</p>
+<p>The upshot is that for an Ehrbase CDR, using FLAT/STRUCTURED format, we have to explicitly skip any Identifier object, where the incoming data is absent, whereas a Better CDR handles this more gracefully and will skip the row internally.</p>
 <h2 id="datatype-ordinal-dv_ordinaland-scale-dv_scale">Datatype: <strong>ordinal</strong> <code>DV_ORDINAL</code>and <strong>scale</strong> <code>DV_SCALE</code></h2>
 <p>Combines <strong>codedText</strong> with a score, expressed as an integer (DV_ORDINAL) or a real number (DV_SCALE). </p>
 <p>DV_SCALE is just being introduced in the latest version of the Reference Model to support the small number of scales and scores that need real numbers. We expect DV_SCALE to be used in preference to DV_ORDINAL for new archetypes. </p>
@@ -979,6 +1052,13 @@ format</a>.</p>
 <div class="codehilite"><pre><span></span><code>&#39;ctx/time&#39;: &#39;2014-09-23T00:11:02.518+02:00&#39;
 </code></pre></div>
 
+<h4 id="integrationimport-handling-emptynull-data_2">Integration/import: Handling empty/null data</h4>
+<p>When integrating data from an external source, you may encounter an issue if the source data is absent and the dateTime in the target is mandatory - </p>
+<p>For example if the target json is
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;discharge_summary/procedures_list/procedure:0/time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2022-02-03T04:05:06&quot;</span><span class="p">,</span>
+</code></pre></div></p>
+<p>and the incoming procedure datapoint is null or absent, you will get an error as the 'time' attribute in openEHR is mandatory for any ACTION archetype.</p>
+<p>It may be necessary to create a dummy dateTime in this case e.g "1900-01-01" though this needs to be discussed clinically to ensure that it does not lead to any safety issues.</p>
 <h2 id="datatype-quantity">Datatype: <em>quantity</em></h2>
 <p>Records a physical quantity along with the appropriate SI units, which
 should normally be compliant with <a href="http://unitsofmeasure.org">UCUM</a>.</p>
