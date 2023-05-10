@@ -822,7 +822,7 @@ technology-neutral manner.</p>
 <p>Similarly if openEHR developers use the international blood pressure archetype their systems will be interoperable for blood pressure, even if the underlying CDRs have a different vendor or technology.</p>
 <h2 id="what-does-an-openehr-based-system-look-like">What does an openEHR-based system look like?</h2>
 <p>Logically the overall structure of an openEHR-based system is …</p>
-<div class="codehilite"><pre><span></span><code>Physical CDR
+<div class="language-text highlight"><pre><span></span><code>Physical CDR
  Virtual CDR (optional)
   EHR 
    FOLDER
@@ -834,9 +834,8 @@ technology-neutral manner.</p>
             name
             value
 </code></pre></div>
-
 <p>Every single piece of information recorded in an openEHR system follows this generic pattern ....</p>
-<div class="codehilite"><pre><span></span><code>Physical CDR   {Code4Health CDR}
+<div class="language-text highlight"><pre><span></span><code>Physical CDR   {Code4Health CDR}
  Virtual CDR     { My CDR Domain }
   EHR              { John Smith }
    FOLDER               { Cardiology pathway }
@@ -848,7 +847,6 @@ technology-neutral manner.</p>
             name                      { Urea }
             value                      { 4.3 mmols/l}
 </code></pre></div>
-
 <h2 id="cdr-care-data-repository">CDR - Care Data Repository</h2>
 <p>All of the records within a single namespaced patient data repository.
 In some environments, a single physical repository may be represented
@@ -873,13 +871,11 @@ Elements e.g Systolic, Diastolic, Cuff size.</p>
 <p>openEHR systems handle versioning automatically. Any time a new version
 of an existing document is committed to the system, its unique
 compositionId identifier ‘version suffix’ is updated e.g</p>
-<div class="codehilite"><pre><span></span><code><span class="mf">798</span><span class="n">e27b1</span><span class="o">-</span><span class="n">f2e8</span><span class="o">-</span><span class="mf">48</span><span class="n">c3</span><span class="o">-</span><span class="mf">8</span><span class="n">ced</span><span class="o">-</span><span class="mf">42</span><span class="n">d4d27d1db3</span><span class="p">::</span><span class="n">c4h</span><span class="mf">.</span><span class="n">hopd</span><span class="mf">.</span><span class="n">com</span><span class="p">::</span><span class="mf">1</span>
+<div class="language-text highlight"><pre><span></span><code>798e27b1-f2e8-48c3-8ced-42d4d27d1db3::c4h.hopd.com::1
 </code></pre></div>
-
 <p>→</p>
-<div class="codehilite"><pre><span></span><code><span class="mf">798</span><span class="n">e27b1</span><span class="o">-</span><span class="n">f2e8</span><span class="o">-</span><span class="mf">48</span><span class="n">c3</span><span class="o">-</span><span class="mf">8</span><span class="n">ced</span><span class="o">-</span><span class="mf">42</span><span class="n">d4d27d1db3</span><span class="p">::</span><span class="n">c4h</span><span class="mf">.</span><span class="n">hopd</span><span class="mf">.</span><span class="n">com</span><span class="p">::</span><span class="mf">2</span>
+<div class="language-text highlight"><pre><span></span><code>798e27b1-f2e8-48c3-8ced-42d4d27d1db3::c4h.hopd.com::2
 </code></pre></div>
-
 <p>In normal operation only the most recent version of the composition is
 returned by querying or composition retrieval.</p>
 <h2 id="section-optional">Section (optional)</h2>
@@ -984,7 +980,7 @@ exact structure of the Element.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>

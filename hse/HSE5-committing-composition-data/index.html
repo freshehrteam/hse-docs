@@ -943,39 +943,38 @@
 </div>
 </div>
 <p>```js</p>
-<div class="codehilite"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+<div class="language-text highlight"><pre><span></span><code>var axios = require(&#39;axios&#39;);
 
-<span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">({</span><span class="s2">&quot;prostate_cancer_proms_report&quot;</span><span class="p">:</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">trimmed</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">brevity</span><span class="p">}</span><span class="s2">&quot;);</span>
+var data = JSON.stringify({&quot;prostate_cancer_proms_report&quot;: // trimmed for brevity}&quot;);
 
-<span class="k">var</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">method</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;post&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ ehrscapeBaseUrl }}/composition?ehrId={{ ehrId }}&amp;templateId={{ templateId }}&amp;format=STRUCTURED&#39;</span><span class="p">,</span>
-<span class="w">  </span><span class="n">headers</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="s1">&#39;Authorization&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{ authToken }}&#39;</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">data</span>
-<span class="p">};</span>
+var config = {
+  method: &#39;post&#39;,
+  url: &#39;{{ ehrscapeBaseUrl }}/composition?ehrId={{ ehrId }}&amp;templateId={{ templateId }}&amp;format=STRUCTURED&#39;,
+  headers: { 
+    &#39;Content-Type&#39;: &#39;application/json&#39;, 
+    &#39;Authorization&#39;: &#39;{{ authToken }}&#39;
+  },
+  data : data
+};
 
-<span class="n">axios</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
-<span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="w"> </span><span class="p">(</span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="p">));</span>
-<span class="p">})</span>
-<span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="n">function</span><span class="w"> </span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">error</span><span class="p">);</span>
-<span class="p">});</span>
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
 </code></pre></div>
-
 <p>```</p>
 <h3 id="response-for-post-composition">Response for POST /composition</h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://cdr.code4health.org/rest/v1/composition/59e8f5a2-6fb6-47d5-9acd-ae6309d0f1dd::a81f47c6-a757-4e34-b644-3ccc62b4a01c::1&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CREATE&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;compositionUid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;59e8f5a2-6fb6-47d5-9acd-ae6309d0f1dd::a81f47c6-a757-4e34-b644-3ccc62b4a01c::1&quot;</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://cdr.code4health.org/rest/v1/composition/59e8f5a2-6fb6-47d5-9acd-ae6309d0f1dd::a81f47c6-a757-4e34-b644-3ccc62b4a01c::1&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CREATE&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;compositionUid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;59e8f5a2-6fb6-47d5-9acd-ae6309d0f1dd::a81f47c6-a757-4e34-b644-3ccc62b4a01c::1&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre></div>
 <h4 id="the-composition-id">The <code>Composition Id</code></h4>
 <p>The compositionUid is the unique identifier allocated to (and held within) every composition by the CDR.</p>
 <p>You will see that it ends in <code>...::1</code>. The <code>1</code> is the version of this composition instance. If you need to update the instance (perhaps because of an error), you need to do so via a PUT / composition call and if successful the composition version number will clock up to <code>::2</code>.</p>
@@ -1020,7 +1019,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>

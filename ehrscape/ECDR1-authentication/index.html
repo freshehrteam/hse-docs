@@ -793,14 +793,14 @@
 <h3 id="basic-authentication">Basic Authentication</h3>
 <p>If you have a Postman environment file related to your CDR, you should be able to find the Username and Password, and possibly the Basic Auth token, pre-calculated.</p>
 <p>If it is not pre-calculated, it is easy to do so with code like this in javascript.</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">authString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">btoa</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">username</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">password</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
-<span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">authToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Basic: </span><span class="si">${</span><span class="nx">authString</span><span class="si">}</span><span class="sb">`</span>
-</code></pre></div>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">authString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">btoa</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">username</span><span class="si">}</span><span class="sb">:</span><span class="si">${</span><span class="nx">password</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">authToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Basic: </span><span class="si">${</span><span class="nx">authString</span><span class="si">}</span><span class="sb">`</span>
+</span></code></pre></div>
 <p>You then need to send that token in the Authorization header of your REST call e.g. </p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://cdr.code4health.org/rest/v1/template&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
---header<span class="w"> </span><span class="s1">&#39;Authorization: {{ authToken }}&#39;</span>
-</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://cdr.code4health.org/rest/v1/template&#39;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>--header<span class="w"> </span><span class="s1">&#39;Accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>--header<span class="w"> </span><span class="s1">&#39;Authorization: {{ authToken }}&#39;</span>
+</span></code></pre></div>
 <h2 id="connecting-to-the-cdr">Connecting to the CDR</h2>
 <p>To test our basic connection to the CDR, we will perform a very simple <code>List templates</code> call to list the openEHR templates currently registered with the CDR -&gt; <a href="../ECDR2-openehr-templates/">Working with openEHR Templates</a></p>
 
@@ -840,7 +840,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>

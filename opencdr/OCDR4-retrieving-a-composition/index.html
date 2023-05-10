@@ -811,9 +811,8 @@
 </div>
 </div>
 <p>```js</p>
-<div class="codehilite"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">axios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+<div class="language-text highlight"><pre><span></span><code>var axios = require(&#39;axios&#39;);
 </code></pre></div>
-
 <p>var config = {
   method: 'get',
   url: '{{ ehrscapeBaseUrl }}/composition/{{ compositionId }}?format=STRUCTURED',
@@ -829,117 +828,117 @@
 .catch(function (error) {
   console.log(error);
 });</p>
-<p><div class="highlight"><pre><span></span><code>### Response for GET /composition
-
-If the composition is found a `200` code will be returned along with the composition object , which you will note now includes the uid, but should otherwise be identical to that which you previously submitted.
-
-```json
-{
-    &quot;meta&quot;: {
-        &quot;href&quot;: &quot;https://cdr.code4health.org/rest/v1/composition/7b20dc2b-6494-467d-8986-469367f7c75b::4cce5a07-be4d-4318-a94f-3b8401853a20::1&quot;
-    },
-    &quot;compositionUid&quot;: &quot;7b20dc2b-6494-467d-8986-469367f7c75b::4cce5a07-be4d-4318-a94f-3b8401853a20::1&quot;,
-    &quot;format&quot;: &quot;FLAT&quot;,
-    &quot;templateId&quot;: &quot;JMOHW - Passport observations.v0&quot;,
-    &quot;composition&quot;: {
-        &quot;passport_observations/_uid&quot;: &quot;7b20dc2b-6494-467d-8986-469367f7c75b::4cce5a07-be4d-4318-a94f-3b8401853a20::1&quot;,
-        &quot;passport_observations/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/territory|code&quot;: &quot;JM&quot;,
-        &quot;passport_observations/territory|terminology&quot;: &quot;ISO_3166-1&quot;,
-        &quot;passport_observations/context/start_time&quot;: &quot;2020-10-18T16:16:21.449Z&quot;,
-        &quot;passport_observations/context/setting|code&quot;: &quot;238&quot;,
-        &quot;passport_observations/context/setting|value&quot;: &quot;other care&quot;,
-        &quot;passport_observations/context/setting|terminology&quot;: &quot;openehr&quot;,
-        &quot;passport_observations/blood_pressure/systolic|magnitude&quot;: 169.0,
-        &quot;passport_observations/blood_pressure/systolic|unit&quot;: &quot;mm[Hg]&quot;,
-        &quot;passport_observations/blood_pressure/diastolic|magnitude&quot;: 692.0,
-        &quot;passport_observations/blood_pressure/diastolic|unit&quot;: &quot;mm[Hg]&quot;,
-        &quot;passport_observations/blood_pressure/time&quot;: &quot;2020-10-18T16:16:21.452Z&quot;,
-        &quot;passport_observations/blood_pressure/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/blood_pressure/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/blood_pressure/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/blood_pressure/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/height_length/height_length|magnitude&quot;: 609.33,
-        &quot;passport_observations/height_length/height_length|unit&quot;: &quot;cm&quot;,
-        &quot;passport_observations/height_length/time&quot;: &quot;2020-10-18T16:16:21.453Z&quot;,
-        &quot;passport_observations/height_length/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/height_length/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/height_length/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/height_length/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/body_weight/weight|magnitude&quot;: 380.49,
-        &quot;passport_observations/body_weight/weight|unit&quot;: &quot;kg&quot;,
-        &quot;passport_observations/body_weight/time&quot;: &quot;2020-10-18T16:16:21.453Z&quot;,
-        &quot;passport_observations/body_weight/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/body_weight/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/body_weight/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/body_weight/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/blood_glucose/test_name|code&quot;: &quot;14743-9&quot;,
-        &quot;passport_observations/blood_glucose/test_name|value&quot;: &quot;Glucose [Moles/volume] in Capillary blood by Glucometer&quot;,
-        &quot;passport_observations/blood_glucose/test_name|terminology&quot;: &quot;LOINC&quot;,
-        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_name|code&quot;: &quot;14743-9&quot;,
-        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_name|value&quot;: &quot;Glucose [Moles/volume] in Capillary blood by Glucometer&quot;,
-        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_name|terminology&quot;: &quot;LOINC&quot;,
-        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_result|magnitude&quot;: 52.61,
-        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_result|unit&quot;: &quot;mmol/L&quot;,
-        &quot;passport_observations/blood_glucose/time&quot;: &quot;2020-10-18T16:16:21.453Z&quot;,
-        &quot;passport_observations/blood_glucose/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/blood_glucose/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/blood_glucose/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/blood_glucose/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/pulse_oximetry/spo|numerator&quot;: 0.0,
-        &quot;passport_observations/pulse_oximetry/spo|denominator&quot;: 100.0,
-        &quot;passport_observations/pulse_oximetry/spo|type&quot;: 2,
-        &quot;passport_observations/pulse_oximetry/spo&quot;: 0.0,
-        &quot;passport_observations/pulse_oximetry/time&quot;: &quot;2020-10-18T16:16:21.455Z&quot;,
-        &quot;passport_observations/pulse_oximetry/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/pulse_oximetry/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/pulse_oximetry/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/pulse_oximetry/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/body_temperature/temperature|magnitude&quot;: 72.7,
-        &quot;passport_observations/body_temperature/temperature|unit&quot;: &quot;[degF]&quot;,
-        &quot;passport_observations/body_temperature/time&quot;: &quot;2020-10-18T16:16:21.455Z&quot;,
-        &quot;passport_observations/body_temperature/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/body_temperature/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/body_temperature/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/body_temperature/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/clinical_synopsis/notes&quot;: &quot;Notes 9&quot;,
-        &quot;passport_observations/clinical_synopsis/language|code&quot;: &quot;en&quot;,
-        &quot;passport_observations/clinical_synopsis/language|terminology&quot;: &quot;ISO_639-1&quot;,
-        &quot;passport_observations/clinical_synopsis/encoding|code&quot;: &quot;UTF-8&quot;,
-        &quot;passport_observations/clinical_synopsis/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
-        &quot;passport_observations/category|code&quot;: &quot;433&quot;,
-        &quot;passport_observations/category|value&quot;: &quot;event&quot;,
-        &quot;passport_observations/category|terminology&quot;: &quot;openehr&quot;,
-        &quot;passport_observations/composer|name&quot;: &quot;moh-jamaica_4cce5a07-be4d-4318-a94f-3b8401853a20&quot;
-    },
-    &quot;deleted&quot;: false,
-    &quot;lastVersion&quot;: true,
-    &quot;ehrId&quot;: &quot;b4a4577f-7496-4053-ae60-45e22cfc9952&quot;,
-    &quot;lifecycleState&quot;: &quot;COMPLETE&quot;
-}```
-
-#### Other data formats
-
-The Better Ehrscape API offers several other serialisation formats. You can have a look at these by simply changing the `format` parameter on the `GET / composition` call, and the call Header `Accept` to switch between JSON and XML.
-
-
-##### &#39;FLAT JSON&#39;
-
-This uses the same path-shortening mechanism as structured JSON but flattens all of the tree structure to a set of name-value pairs. Some developers prefer this to the STRUCTURED format.
-</code></pre></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>### Response for GET /composition
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>If the composition is found a `200` code will be returned along with the composition object , which you will note now includes the uid, but should otherwise be identical to that which you previously submitted.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>```json
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>{
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    &quot;meta&quot;: {
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        &quot;href&quot;: &quot;https://cdr.code4health.org/rest/v1/composition/7b20dc2b-6494-467d-8986-469367f7c75b::4cce5a07-be4d-4318-a94f-3b8401853a20::1&quot;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    },
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    &quot;compositionUid&quot;: &quot;7b20dc2b-6494-467d-8986-469367f7c75b::4cce5a07-be4d-4318-a94f-3b8401853a20::1&quot;,
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    &quot;format&quot;: &quot;FLAT&quot;,
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    &quot;templateId&quot;: &quot;JMOHW - Passport observations.v0&quot;,
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    &quot;composition&quot;: {
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        &quot;passport_observations/_uid&quot;: &quot;7b20dc2b-6494-467d-8986-469367f7c75b::4cce5a07-be4d-4318-a94f-3b8401853a20::1&quot;,
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        &quot;passport_observations/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        &quot;passport_observations/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        &quot;passport_observations/territory|code&quot;: &quot;JM&quot;,
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        &quot;passport_observations/territory|terminology&quot;: &quot;ISO_3166-1&quot;,
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        &quot;passport_observations/context/start_time&quot;: &quot;2020-10-18T16:16:21.449Z&quot;,
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        &quot;passport_observations/context/setting|code&quot;: &quot;238&quot;,
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        &quot;passport_observations/context/setting|value&quot;: &quot;other care&quot;,
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        &quot;passport_observations/context/setting|terminology&quot;: &quot;openehr&quot;,
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        &quot;passport_observations/blood_pressure/systolic|magnitude&quot;: 169.0,
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        &quot;passport_observations/blood_pressure/systolic|unit&quot;: &quot;mm[Hg]&quot;,
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        &quot;passport_observations/blood_pressure/diastolic|magnitude&quot;: 692.0,
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        &quot;passport_observations/blood_pressure/diastolic|unit&quot;: &quot;mm[Hg]&quot;,
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        &quot;passport_observations/blood_pressure/time&quot;: &quot;2020-10-18T16:16:21.452Z&quot;,
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        &quot;passport_observations/blood_pressure/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        &quot;passport_observations/blood_pressure/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        &quot;passport_observations/blood_pressure/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        &quot;passport_observations/blood_pressure/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        &quot;passport_observations/height_length/height_length|magnitude&quot;: 609.33,
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        &quot;passport_observations/height_length/height_length|unit&quot;: &quot;cm&quot;,
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        &quot;passport_observations/height_length/time&quot;: &quot;2020-10-18T16:16:21.453Z&quot;,
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        &quot;passport_observations/height_length/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        &quot;passport_observations/height_length/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        &quot;passport_observations/height_length/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        &quot;passport_observations/height_length/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        &quot;passport_observations/body_weight/weight|magnitude&quot;: 380.49,
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        &quot;passport_observations/body_weight/weight|unit&quot;: &quot;kg&quot;,
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        &quot;passport_observations/body_weight/time&quot;: &quot;2020-10-18T16:16:21.453Z&quot;,
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>        &quot;passport_observations/body_weight/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>        &quot;passport_observations/body_weight/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        &quot;passport_observations/body_weight/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>        &quot;passport_observations/body_weight/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>        &quot;passport_observations/blood_glucose/test_name|code&quot;: &quot;14743-9&quot;,
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>        &quot;passport_observations/blood_glucose/test_name|value&quot;: &quot;Glucose [Moles/volume] in Capillary blood by Glucometer&quot;,
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>        &quot;passport_observations/blood_glucose/test_name|terminology&quot;: &quot;LOINC&quot;,
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_name|code&quot;: &quot;14743-9&quot;,
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_name|value&quot;: &quot;Glucose [Moles/volume] in Capillary blood by Glucometer&quot;,
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_name|terminology&quot;: &quot;LOINC&quot;,
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_result|magnitude&quot;: 52.61,
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>        &quot;passport_observations/blood_glucose/laboratory_analyte_result/analyte_result|unit&quot;: &quot;mmol/L&quot;,
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>        &quot;passport_observations/blood_glucose/time&quot;: &quot;2020-10-18T16:16:21.453Z&quot;,
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>        &quot;passport_observations/blood_glucose/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>        &quot;passport_observations/blood_glucose/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>        &quot;passport_observations/blood_glucose/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>        &quot;passport_observations/blood_glucose/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>        &quot;passport_observations/pulse_oximetry/spo|numerator&quot;: 0.0,
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>        &quot;passport_observations/pulse_oximetry/spo|denominator&quot;: 100.0,
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>        &quot;passport_observations/pulse_oximetry/spo|type&quot;: 2,
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>        &quot;passport_observations/pulse_oximetry/spo&quot;: 0.0,
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>        &quot;passport_observations/pulse_oximetry/time&quot;: &quot;2020-10-18T16:16:21.455Z&quot;,
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>        &quot;passport_observations/pulse_oximetry/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>        &quot;passport_observations/pulse_oximetry/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>        &quot;passport_observations/pulse_oximetry/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>        &quot;passport_observations/pulse_oximetry/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>        &quot;passport_observations/body_temperature/temperature|magnitude&quot;: 72.7,
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>        &quot;passport_observations/body_temperature/temperature|unit&quot;: &quot;[degF]&quot;,
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>        &quot;passport_observations/body_temperature/time&quot;: &quot;2020-10-18T16:16:21.455Z&quot;,
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>        &quot;passport_observations/body_temperature/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>        &quot;passport_observations/body_temperature/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>        &quot;passport_observations/body_temperature/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>        &quot;passport_observations/body_temperature/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>        &quot;passport_observations/clinical_synopsis/notes&quot;: &quot;Notes 9&quot;,
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>        &quot;passport_observations/clinical_synopsis/language|code&quot;: &quot;en&quot;,
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>        &quot;passport_observations/clinical_synopsis/language|terminology&quot;: &quot;ISO_639-1&quot;,
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>        &quot;passport_observations/clinical_synopsis/encoding|code&quot;: &quot;UTF-8&quot;,
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>        &quot;passport_observations/clinical_synopsis/encoding|terminology&quot;: &quot;IANA_character-sets&quot;,
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>        &quot;passport_observations/category|code&quot;: &quot;433&quot;,
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>        &quot;passport_observations/category|value&quot;: &quot;event&quot;,
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>        &quot;passport_observations/category|terminology&quot;: &quot;openehr&quot;,
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>        &quot;passport_observations/composer|name&quot;: &quot;moh-jamaica_4cce5a07-be4d-4318-a94f-3b8401853a20&quot;
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>    },
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>    &quot;deleted&quot;: false,
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>    &quot;lastVersion&quot;: true,
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>    &quot;ehrId&quot;: &quot;b4a4577f-7496-4053-ae60-45e22cfc9952&quot;,
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>    &quot;lifecycleState&quot;: &quot;COMPLETE&quot;
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>}```
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>#### Other data formats
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>The Better Ehrscape API offers several other serialisation formats. You can have a look at these by simply changing the `format` parameter on the `GET / composition` call, and the call Header `Accept` to switch between JSON and XML.
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>##### &#39;FLAT JSON&#39;
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>This uses the same path-shortening mechanism as structured JSON but flattens all of the tree structure to a set of name-value pairs. Some developers prefer this to the STRUCTURED format.
+</span></code></pre></div>
 format=FLAT
 Accept : `application/json'</p>
-<p><div class="highlight"><pre><span></span><code>##### &#39;RAW JSON&#39;
-
-This is very similar to, but not identical to the openEHR Canonical JSON format, which essentially supercedes it. It very closely adheres tothe openEHR Reference model specification but is pretty voluminous
-</code></pre></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>##### &#39;RAW JSON&#39;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>This is very similar to, but not identical to the openEHR Canonical JSON format, which essentially supercedes it. It very closely adheres tothe openEHR Reference model specification but is pretty voluminous
+</span></code></pre></div>
 format=RAW
 Accept : <code>application/json'
-<div class="highlight"><pre><span></span><code>##### &#39;RAW XML&#39;
-
-This is &#39;canonical&#39; openEHR XML which is also accepted by the openEHR REST  API. It is the lingu-franca for all openEHR CDRs, even thosewhich do not support the REST CDR API, will normally accept and expose data in this XML format. 
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>##### &#39;RAW XML&#39;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>This is &#39;canonical&#39; openEHR XML which is also accepted by the openEHR REST  API. It is the lingu-franca for all openEHR CDRs, even thosewhich do not support the REST CDR API, will normally accept and expose data in this XML format. 
+</span></code></pre></div>
 format=RAW
 Accept :</code>application/xml'
 ```</p>
@@ -980,7 +979,7 @@ Accept :</code>application/xml'
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>

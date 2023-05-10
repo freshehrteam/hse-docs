@@ -797,9 +797,8 @@ find the following notes helpful.</p>
 <h2 id="datatype-text">Datatype: <em>text</em></h2>
 <p>Allows the recording of simple, unformatted text. openEHR does not
 normally constrain the length of string.</p>
-<div class="codehilite"><pre><span></span><code>asthma_diary_entry/history:0/story_history/comment: Feeling much better,
+<div class="language-text highlight"><pre><span></span><code>asthma_diary_entry/history:0/story_history/comment: Feeling much better,
 </code></pre></div>
-
 <h2 id="datatype-codedtext">Datatype: <em>codedText</em></h2>
 <p>Is a commonly used datatype in openEHR systems and is a sub-class of
 text. i.e where-ever <em>text</em> is specified <em>codedText</em> can be used
@@ -810,57 +809,50 @@ referred to as <strong>'atCodes'</strong></p>
 <p>A codedText element always includes the terminologyID, the code itself
 and the text of the coded concept (Rubric). Where a codedText item is
 required, allowed value(s) are expressed in the form:</p>
-<div class="codehilite"><pre><span></span><code>terminologyId::code::rubric
+<div class="language-text highlight"><pre><span></span><code>terminologyId::code::rubric
 
 local::at0007::Dental swelling
 SNOMED-CT::123456::No pathology found
 </code></pre></div>
-
 <p>When a codedText item is added to a FLAT JSON format document, you must
 give the code, value and terminology, unless this is a local (atCode)
 code, in which case only the code needs to be provided.</p>
 <h3 id="external-terminology-eg-snomed-ct">External terminology e.g SNOMED CT</h3>
 <p>Code, terminology and value must be specified</p>
-<div class="codehilite"><pre><span></span><code>&#39;asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|code&#39;: &#39;23924001&#39;,
+<div class="language-text highlight"><pre><span></span><code>&#39;asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|code&#39;: &#39;23924001&#39;,
 &#39;asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|value&#39;: &#39;chest tightness&#39;,
 &#39;asthma_diary_entry/history:0/story_history/symptom:0/symptom_name|terminology&#39;: &#39;SNOMED-CT&#39;,
 </code></pre></div>
-
 <h3 id="local-atcode-eg-at0007">Local 'atCode' e.g at0007</h3>
 <p>Only the code needs to be specified - the value and terminology are not
 required since they are pre-defined in the openEHR template..</p>
-<div class="codehilite"><pre><span></span><code>&#39;asthma_diary_entry/examination_findings:0/pulmonary_function_testing:0/result_details/pulmonary_flow_rate_result/test_result_name|code&#39;: &#39;at0071&#39;
+<div class="language-text highlight"><pre><span></span><code>&#39;asthma_diary_entry/examination_findings:0/pulmonary_function_testing:0/result_details/pulmonary_flow_rate_result/test_result_name|code&#39;: &#39;at0071&#39;
 </code></pre></div>
-
 <h2 id="datatype-ordinal">Datatype: <em>ordinal</em></h2>
 <p>Combines codedText with a score, expressed as an integer.</p>
-<div class="codehilite"><pre><span></span><code><span class="mi">0</span><span class="o">:</span><span class="w"> </span><span class="n">Green</span><span class="w">  </span><span class="err">`</span><span class="n">local</span><span class="o">::</span><span class="n">at0022</span><span class="o">::</span><span class="n">Green</span><span class="err">`</span>
-<span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="n">Amber</span><span class="w">  </span><span class="err">`</span><span class="n">local</span><span class="o">::</span><span class="n">at0023</span><span class="o">::</span><span class="n">Amber</span><span class="err">`</span>
-<span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="n">Red</span><span class="w">    </span><span class="err">`</span><span class="n">local</span><span class="o">::</span><span class="n">at0024</span><span class="o">::</span><span class="n">Red</span><span class="err">`</span>
+<div class="language-text highlight"><pre><span></span><code>0: Green  `local::at0022::Green`
+1: Amber  `local::at0023::Amber`
+2: Red    `local::at0024::Red`
 
-<span class="s1">&#39;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|code&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;at0024&#39;</span><span class="o">,</span>
-<span class="s1">&#39;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|ordinal&#39;</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="o">,</span>
-<span class="s1">&#39;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|value&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Red&#39;</span><span class="o">,</span>
+&#39;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|code&#39;: &#39;at0024&#39;,
+&#39;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|ordinal&#39;: 2,
+&#39;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|value&#39;: &#39;Red&#39;,
 </code></pre></div>
-
 <h2 id="datatype-count">Datatype: <em>count</em></h2>
 <p><strong><em>count</em></strong> is a simple integer.</p>
-<div class="codehilite"><pre><span></span><code>&#39;community_dental_final_assessment_letter/investigations_and_results:0/imaging_examination_result:0/result_group/decayed_teeth/decayed_teeth&#39;: 4,
+<div class="language-text highlight"><pre><span></span><code>&#39;community_dental_final_assessment_letter/investigations_and_results:0/imaging_examination_result:0/result_group/decayed_teeth/decayed_teeth&#39;: 4,
 </code></pre></div>
-
 <h2 id="datatype-datetime">Datatype: <em>datetime</em></h2>
 <p>Records a date or date and time using the <a href="http://www.w3.org/TR/NOTE-datetime">ISO8061
 format</a>.</p>
-<div class="codehilite"><pre><span></span><code>&#39;ctx/time&#39;: &#39;2014-09-23T00:11:02.518+02:00&#39;
+<div class="language-text highlight"><pre><span></span><code>&#39;ctx/time&#39;: &#39;2014-09-23T00:11:02.518+02:00&#39;
 </code></pre></div>
-
 <h2 id="datatype-quantity">Datatype: <em>quantity</em></h2>
 <p>Records a physical quantity along with the appropriate SI units, which
 should normally be compliant with <a href="http://unitsofmeasure.org">UCUM</a>.</p>
-<div class="codehilite"><pre><span></span><code>&quot;asthma_diary_entry/examination_findings:0/pulmonary_function_testing:0/result_details/pulmonary_flow_rate_result/actual_result|magnitude&quot;: 550,
+<div class="language-text highlight"><pre><span></span><code>&quot;asthma_diary_entry/examination_findings:0/pulmonary_function_testing:0/result_details/pulmonary_flow_rate_result/actual_result|magnitude&quot;: 550,
 &quot;asthma_diary_entry/examination_findings:0/pulmonary_function_testing:0/result_details/pulmonary_flow_rate_result/actual_result|unit&quot;: &quot;l/min&quot;,
 </code></pre></div>
-
 <h1 id="key-openehr-concepts-and-classes">Key openEHR concepts and classes</h1>
 <h2 id="external-identifiers">External identifiers</h2>
 <p>The subjectId (sometimes called externalId) is a patient identifier by
@@ -915,7 +907,7 @@ easier for new openEHR users. e.g.</p>
 </li>
 <li>
 <p>STRUCTURED JSON format</p>
-<div class="codehilite"><pre><span></span><code>…
+<div class="language-text highlight"><pre><span></span><code>…
 &quot;clinical_factors&quot;: [
  {
  &quot;|code&quot;: &quot;at0025&quot;,
@@ -925,23 +917,21 @@ easier for new openEHR users. e.g.</p>
  ]
 …
 </code></pre></div>
-
 </li>
 <li>
 <p>RAW XML format</p>
-<div class="codehilite"><pre><span></span><code>…
-<span class="nt">&lt;ns2:value</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;ns2:DV_CODED_TEXT&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;ns2:value</span><span class="err">&lt;Teeth</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">carious</span><span class="w"> </span><span class="err">lesions&lt;/ns2:value</span><span class="nt">&gt;</span>
-<span class="nt">&lt;ns2:defining_code&gt;</span>
-<span class="nt">&lt;ns2:terminology_id&gt;</span>
-<span class="nt">&lt;ns2:value</span><span class="err">&lt;local&lt;/ns2:value</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/ns2:terminology_id&gt;</span>
-<span class="nt">&lt;ns2:code_string</span><span class="err">&lt;at0025&lt;/ns2:code_string</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/ns2:defining_code&gt;</span>
-<span class="nt">&lt;/ns2:value&gt;</span>
-<span class="nt">&lt;/ns2:value&gt;</span><span class="w"> </span>…
+<div class="language-text highlight"><pre><span></span><code>…
+&lt;ns2:value xsi:type=&quot;ns2:DV_CODED_TEXT&quot;&gt;
+&lt;ns2:value&lt;Teeth with carious lesions&lt;/ns2:value&gt;
+&lt;ns2:defining_code&gt;
+&lt;ns2:terminology_id&gt;
+&lt;ns2:value&lt;local&lt;/ns2:value&gt;
+&lt;/ns2:terminology_id&gt;
+&lt;ns2:code_string&lt;at0025&lt;/ns2:code_string&gt;
+&lt;/ns2:defining_code&gt;
+&lt;/ns2:value&gt;
+&lt;/ns2:value&gt; …
 </code></pre></div>
-
 </li>
 </ul>
 <h1 id="key-openehr-reference-model-attributes">Key openEHR Reference model attributes</h1>
@@ -974,7 +964,7 @@ use</p>
 these attributes, providing sensible defaults. In particular the <code>ctx</code>
 header common to both JSON STRUCTURED and FLAT formats, considerably
 simplifies the composition header …</p>
-<div class="codehilite"><pre><span></span><code>&#39;ctx/composer_name&#39;: &#39;Rebecca Wassall&#39;,
+<div class="language-text highlight"><pre><span></span><code>&#39;ctx/composer_name&#39;: &#39;Rebecca Wassall&#39;,
 &#39;ctx/health_care_facility|id&#39;: &#39;999999-345&#39;,
 &#39;ctx/health_care_facility|name&#39;: &#39;Northumbria Community NHS&#39;,
 &#39;ctx/id_namespace&#39;: &#39;NHS-UK&#39;,
@@ -983,68 +973,65 @@ simplifies the composition header …</p>
 &#39;ctx/territory&#39;: &#39;GB&#39;,
 &#39;ctx/time&#39;: &#39;2014-09-23T00:11:02.518+02:00&#39;,
 </code></pre></div>
-
 <h1 id="handling-specific-openehr-datatypes">Handling specific openEHR datatypes</h1>
 <h2 id="text"><em>text</em></h2>
 <p>Text handling is normally straightforward.</p>
 <p>FLAT + STRUCTURED</p>
-<div class="codehilite"><pre><span></span><code>&quot;synopsis&quot;: [
+<div class="language-text highlight"><pre><span></span><code>&quot;synopsis&quot;: [
  &quot;Significant dental issues.&quot;
  ]
 </code></pre></div>
-
 <h2 id="codedtext"><em>codedText</em></h2>
 <p>For an external terminology, the terminologyId, code and text value must
 be supplied but in JSON FLAT and STRUCTURED formats only the local
 'atcode' needs to be supplied.</p>
 <p>STRUCTURED JSON format</p>
-<div class="highlight"><pre><span></span><code> Internal (local) code:
- &quot;dental_swelling&quot;: [
- {
- &quot;|code&quot;: &quot;at0006&quot;,
- }
- ]
-
- External terminology:
- &quot;symptom_name&quot;: [
- {
- &quot;|code&quot;: &quot;102616008&quot;,
- &quot;|terminology&quot;: &quot;SNOMED-CT&quot;,
- &quot;|value&quot;: &quot;Painful mouth&quot;
- }
- ]
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> Internal (local) code:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> &quot;dental_swelling&quot;: [
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> {
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> &quot;|code&quot;: &quot;at0006&quot;,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> }
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> ]
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a> External terminology:
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a> &quot;symptom_name&quot;: [
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a> {
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a> &quot;|code&quot;: &quot;102616008&quot;,
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a> &quot;|terminology&quot;: &quot;SNOMED-CT&quot;,
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a> &quot;|value&quot;: &quot;Painful mouth&quot;
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a> }
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a> ]
+</span></code></pre></div>
 <p>FLAT JSON format</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="err">I</span><span class="kc">nternal</span><span class="w"> </span><span class="err">(local)</span><span class="w"> </span><span class="err">code</span><span class="p">:</span>
-<span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/examination_findings:0/physical_examination_findings:0/oral_examination/dental_swelling|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0006&quot;</span>
-
-<span class="w"> </span><span class="err">Ex</span><span class="kc">ternal</span><span class="w"> </span><span class="kc">ter</span><span class="err">mi</span><span class="kc">n</span><span class="err">ology</span><span class="p">:</span>
-<span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/history:0/story_history:0/symptom:0/symptom_name|value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Painful mouth&quot;</span><span class="p">,</span>
-<span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/history:0/story_history:0/symptom:0/symptom_name|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102616008&quot;</span><span class="p">,</span>
-<span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/history:0/story_history:0/symptom:0/symptom_name|terminology&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SNOMED-CT&quot;</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w"> </span><span class="err">I</span><span class="kc">nternal</span><span class="w"> </span><span class="err">(local)</span><span class="w"> </span><span class="err">code</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/examination_findings:0/physical_examination_findings:0/oral_examination/dental_swelling|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0006&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w"> </span><span class="err">Ex</span><span class="kc">ternal</span><span class="w"> </span><span class="kc">ter</span><span class="err">mi</span><span class="kc">n</span><span class="err">ology</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/history:0/story_history:0/symptom:0/symptom_name|value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Painful mouth&quot;</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/history:0/story_history:0/symptom:0/symptom_name|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;102616008&quot;</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w"> </span><span class="nt">&quot;community_dental_final_assessment_letter/history:0/story_history:0/symptom:0/symptom_name|terminology&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SNOMED-CT&quot;</span>
+</span></code></pre></div>
 <h2 id="ordinal"><em>ordinal</em></h2>
 <p>For JSON FLAT and STRUCTURED formats only the local 'atcode' needs to be supplied although the ordinal and text value are also
 accepted FLAT JSON format</p>
-<div class="codehilite"><pre><span></span><code>&quot;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|code&quot;: &quot;at0024&quot;
+<div class="language-text highlight"><pre><span></span><code>&quot;community_dental_final_assessment_letter/assessment_scales/dental_rag_score:0/caries_tooth_decay/caries_risk|code&quot;: &quot;at0024&quot;
 </code></pre></div>
-
 <p>STRUCTURED format</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&quot;caries_risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0024&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="nt">&quot;caries_risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0024&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">]</span>
+</span></code></pre></div>
 <p>or</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nt">&quot;caries_risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0024&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;|ordinal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;|value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Red&quot;</span>
-<span class="w"> </span><span class="p">}</span>
-<span class="w"> </span><span class="p">]</span>
-</code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w"> </span><span class="nt">&quot;caries_risk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;|code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;at0024&quot;</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;|ordinal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;|value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Red&quot;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w"> </span><span class="p">]</span>
+</span></code></pre></div>
 <h2 id="date"><em>date</em></h2>
 <p>Dates need to be persisted in the <a href="http://www.w3.org/TR/NOTE-datetime">ISO8061format</a> and should be displayed in CUI format e.g. 12-Nov-1958</p>
 <h1 id="tricky-issues">Tricky issues</h1>
@@ -1105,7 +1092,7 @@ occurrences of the same data point in the underlying dataset.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
